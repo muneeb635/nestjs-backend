@@ -44,7 +44,7 @@ class ConfigService {
             migrationsTableName: 'migration',
 
             migrations: ['src/migration/*.ts'],
-            // ssl: true,
+            ssl: true,
 
 
             autoLoadEntities: true,

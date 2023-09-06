@@ -19,4 +19,22 @@ export class eventService {
   async createRevenue(createRevenueDto: Partial<Revenue>) {
     return await this.revenueRepository.save(createRevenueDto);
   }
+
+  async allEvents() {
+    return await this.eventRepository.find({ relations: ['marquee'] });
+  }
+  async findById(id: number) {
+    const event = await this.eventRepository
+      .createQueryBuilder('event')
+      .leftJoinAndSelect('event.marquee', 'marquee')
+      .leftJoinAndSelect('event.revenue', 'revenue')
+      .where('event.id = :id', { id: id })
+      .getOne();
+
+    return event;
+  }
+
+  async findAdminevetns (){
+    return await this.eventRepository.find({ relations: ['marquee','revenue'] });
+  }
 }

@@ -15,5 +15,9 @@ export class marqeesService {
     
         return await this.marqeesRepository.save(marqeeDto);
       }
+
+      async getAll(){
+        return await this.marqeesRepository.find()
+      }
     
 }

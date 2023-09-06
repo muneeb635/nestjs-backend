@@ -37,4 +37,21 @@ export class revenueController {
         throw error
     }
   }
+
+  @Get('/all')
+  @HttpCode(HttpStatus.OK)
+ async getAll() {
+    try {
+        const marque = await this.appService.getAll();
+
+        return {
+            status:true,
+            data:marque
+        }
+        
+    } catch (error) {
+        this.logger.error(error);
+        throw error
+    }
+  }
 }

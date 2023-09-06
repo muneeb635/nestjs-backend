@@ -33,7 +33,6 @@ export class Revenue {
       Event.revenue;
     },
   )
-  @JoinColumn({ name: 'event' })
   public event: Event;
 
   @OneToOne(

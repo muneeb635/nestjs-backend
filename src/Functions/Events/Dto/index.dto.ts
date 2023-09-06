@@ -45,6 +45,11 @@ export class createRevenue {
   updated_at: any;
 }
 
+export class oneEventDto {
+  @IsNotEmpty()
+  @IsInt()
+  id: number;
+}
 export class CreateEventDto {
   @IsNotEmpty()
   @IsString()

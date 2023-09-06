@@ -22,58 +22,58 @@ export class Event {
   //   @Column()
   //   public name: string;
 
-  @Column()
+  @Column({ nullable: true })
   public sr_no: string;
 
-  @Column()
+  @Column({ nullable: false })
   public customer_name: string;
 
-  @Column()
+  @Column({ nullable: false })
   public event_type: string;
 
-  @Column()
+  @Column({ nullable: false })
   public phone_no: string;
 
-  @Column()
+  @Column({ nullable: false })
   public date_time: string;
 
-  @Column()
+  @Column({ nullable: true })
   public stage_fee: number;
 
-  @Column()
+  @Column({ nullable: true })
   public dj_fee: number;
 
-  @Column()
+  @Column({ nullable: true })
   public spot_light_fee: number;
 
-  @Column()
+  @Column({ nullable: true })
   public flower_fee: number;
 
-  @Column()
+  @Column({ nullable: true })
   public snow_fee: number;
 
-  @Column()
+  @Column({ nullable: true })
   public cold_fee: number;
 
-  @Column()
+  @Column({ nullable: true })
   public entry_fee: number;
 
-  @Column()
+  @Column({ nullable: true })
   public trust_fee: number;
 
-  @Column()
+  @Column({ nullable: true })
   public dance_fee: number;
 
-  @Column()
+  @Column({ nullable: true })
   public anar_quantity: number;
 
   //   @Column()
   //   public trust_gali: number;
 
-  @Column()
+  @Column({ nullable: true })
   public chokta_fee: number;
 
-  @Column({ type: 'jsonb' })
+  @Column({ type: 'jsonb', nullable: true })
   public additional_information: object;
 
   @ManyToOne(() => Marquees)
@@ -86,6 +86,8 @@ export class Event {
       revenue.event;
     },
   )
+  @JoinColumn({ name: 'event' })
+
   public revenue: Revenue;
 
   @CreateDateColumn()

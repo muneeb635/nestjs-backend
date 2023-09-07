@@ -21,7 +21,9 @@ export class eventService {
   }
 
   async allEvents() {
-    return await this.eventRepository.find({ relations: ['marquee'] });
+    return await this.eventRepository.find({
+      relations: ['marquee', 'revenue'],
+    });
   }
   async findById(id: number) {
     const event = await this.eventRepository
@@ -34,7 +36,9 @@ export class eventService {
     return event;
   }
 
-  async findAdminevetns (){
-    return await this.eventRepository.find({ relations: ['marquee','revenue'] });
+  async findAdminevetns() {
+    return await this.eventRepository.find({
+      relations: ['marquee', 'revenue'],
+    });
   }
 }

@@ -67,7 +67,7 @@ export class eventController {
   async getAdminEvents () {
     try {
       
-      let event = await this.appService.findById();
+      let event = await this.appService.findAdminevetns();
       // console.log('res', revenue);
 
       return {

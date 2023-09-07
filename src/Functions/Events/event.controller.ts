@@ -38,7 +38,7 @@ export class eventController {
       }
       return {
         status: true,
-        data: revenue,
+        data: event,
       };
     } catch (error) {
       this.logger.error(error);

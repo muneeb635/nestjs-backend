@@ -6,6 +6,7 @@ import { Repository } from 'typeorm';
 
 @Injectable()
 export class eventService {
+  
   constructor(
     @InjectRepository(Event)
     private eventRepository: Repository<Event>,
